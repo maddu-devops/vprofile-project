@@ -13,7 +13,7 @@ pipeline {
         NEXUS_PASS = "Maddu@123"
         RELEASE_REPO = "vprofile-release"
         CENTRAL_REPO = "vpro-maven-central"
-        NEXUSIP = "18.118.158.53"
+        NEXUSIP = "18.216.196.26"
         NEXUSPORT = "8081"
 	NEXUS_GRP_REPO    = "vpro-maven-group"
         NEXUS_LOGIN = "nexuslogin"
@@ -35,20 +35,20 @@ pipeline {
             }
         }
 
-   }
+   
 }
-/*	stage('UNIT TEST'){
+	stage('UNIT TEST'){
             steps {
                 sh 'mvn test'
             }
         }
 
-	stage('INTEGRATION TEST'){
+/*	stage('INTEGRATION TEST'){
             steps {
                 sh 'mvn verify -DskipUnitTests'
             }
         }
-		
+*/		
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
             steps {
                 sh 'mvn checkstyle:checkstyle'
@@ -59,7 +59,8 @@ pipeline {
                 }
             }
         }
-
+}
+/*
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
