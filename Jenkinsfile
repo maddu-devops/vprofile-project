@@ -17,7 +17,8 @@ pipeline {
         NEXUSPORT = "8081"
 	NEXUS_GRP_REPO    = "vpro-maven-group"
         NEXUS_LOGIN = "nexuslogin"
-        
+        SONARSERVER = "sonarserver"
+        SONARSCANNER = "sonarscanner" 
         
     }
 	
@@ -58,9 +59,9 @@ pipeline {
                 }
             }
         }
-}
-}
-/*
+
+
+
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
@@ -84,7 +85,8 @@ pipeline {
             }
           }
         }
-
+}}
+/*
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
