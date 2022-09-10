@@ -19,7 +19,7 @@ pipeline {
         NEXUS_LOGIN = "nexuslogin"
         SONARSERVER = "sonarserver"
         SONARSCANNER = "sonarscanner" 
-        registryCredential = "ecr:us-east-1:awscreds"
+        registryCredential = "ecr:us-east-2:awscreds"
         appRegistry = "064372274984.dkr.ecr.us-east-2.amazonaws.com/vprofileappmaddu"
         vprofileRegistry = "https://064372274984.dkr.ecr.us-east-2.amazonaws.com/"
         
@@ -129,7 +129,7 @@ pipeline {
             script {
                     docker.withRegistry( vprofileRegistry, registryCredential ) {
                     dockerImage.push("$BUILD_NUMBER")
-                    /* dockerImage.push("latest") */
+                    dockerImage.push("latest")
                 }
             }
         }
